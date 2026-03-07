@@ -1,7 +1,7 @@
 :root {
     --color-fondo: #F9F8F6;
     --color-texto: #1d1d1d;
-    --color-acento: #D4AF37; 
+    --color-acento: #b9910c; 
     --fuente-marca: 'Cinzel', serif; 
     --fuente-titulos: 'Playfair Display', serif;
     --fuente-textos: 'Lato', sans-serif;
@@ -78,7 +78,7 @@ body::before {
 
 .tagline {
     font-family: var(--fuente-titulos);
-    font-size: 1rem;
+    font-size: 1.4rem;
     color: var(--color-acento);
     font-style: italic;
     margin-top: 0.2rem;
@@ -159,7 +159,7 @@ body::before {
     /* CAMBIO CLAVE: Textura de Papel Viejo (Recomendación técnica) */
     /* Para esto, tenés que buscar una imagen que se llame 'old_paper_texture.jpg' */
     /* y guardarla en la carpeta img/cite: Img Content]. */
-    background-image: url('/img/IL\ TEGGIANESE\ \(14\).png');
+    background-image: url('/img/IL\ TEGGIANESE\ \(15\).png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
