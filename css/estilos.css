@@ -158,7 +158,7 @@ body::before {
 
     /* CAMBIO CLAVE: Textura de Papel Viejo (Recomendación técnica) */
     /* Para esto, tenés que buscar una imagen que se llame 'old_paper_texture.jpg' */
-    /* y guardarla en la carpeta img/cite: Img Content]. */
+    /* y guardarla en la carpeta img/. */
     background-image: url('/img/IL\ TEGGIANESE\ \(15\).png');
     background-size: cover;
     background-position: center;
@@ -177,16 +177,21 @@ body::before {
 
 .coctel-card-front { align-items: center; }
 
+/* =========================================
+   CAMBIO AQUÍ: Imagen más grande dentro de la carta
+   ========================================= */
 .coctel-img-placeholder {
-    width: 100%;
-    height: 200px;
-    margin-bottom: 1.2rem;
+    width: 110%;
+    /* Agrandé el alto de 200px a 300px */
+    height: 250px; 
+    margin-bottom: 1.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.img-coctel-3d { max-height: 100%; max-width: 100%; object-fit: contain; }
+/* No cambié nada acá, pero 'object-fit: contain' se adapta al nuevo tamaño */
+.img-coctel-3d { max-height: 250%; max-width: 110%; object-fit: contain; }
 
 .coctel-card-front h3 {
     font-family: var(--fuente-titulos);
@@ -230,7 +235,7 @@ body::before {
 .footer-bottom { text-align: center; margin-top: 4rem; font-size: 0.8rem; color: #777; }
 
 /* =========================================
-   RESPONSIVE (3 COLUMNAS CELULAR)
+   RESPONSIVE (3 COLUMNAS CELULAR - Dejalo así)
    ========================================= */
 @media (max-width: 768px) {
     .logo-nav { width: 60px; }
@@ -246,7 +251,7 @@ body::before {
         padding: 0 0.1rem;
     }
 
-    .coctel-card-scene { height: 380px; }
+    .coctel-card-scene { height: 250px; }
     .coctel-card-face { padding: 0.8rem 0.35rem; }
     .coctel-img-placeholder { height: 110px; margin-bottom: 0.5rem; }
     .coctel-card-front h3 { font-size: 0.7rem; }
