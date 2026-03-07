@@ -1,0 +1,258 @@
+:root {
+    --color-fondo: #F9F8F6;
+    --color-texto: #1d1d1d;
+    --color-acento: #D4AF37; 
+    --fuente-marca: 'Cinzel', serif; 
+    --fuente-titulos: 'Playfair Display', serif;
+    --fuente-textos: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-textos);
+    min-height: 100vh;
+}
+
+/* Fondo con Opacidad */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    background-image: url('/img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1.50; 
+    filter: blur(5px); 
+}
+
+/* =========================================
+   NAVBAR TRANSLÚCIDA
+   ========================================= */
+.navbar-teggianese {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(249, 248, 246, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 1rem;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrado absoluto */
+    gap: 1.5rem;
+}
+
+.logo-nav {
+    width: 120px; 
+    height: auto;
+}
+
+.brand-info h1 {
+    font-family: var(--fuente-marca);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.tagline {
+    font-family: var(--fuente-titulos);
+    font-size: 1rem;
+    color: var(--color-acento);
+    font-style: italic;
+    margin-top: 0.2rem;
+}
+
+/* =========================================
+   SECCIÓN COCTELES (CENTRADO)
+   ========================================= */
+#cocteles {
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los hijos horizontalmente */
+    text-align: center; /* Centra el texto */
+}
+
+.cocteles-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cocteles h2 {
+    color: #FFFFFF; /* Blanco puro */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+.cocteles-intro {
+    color: #FFFFFF;
+    font-weight: 400;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Grilla Centrada */
+.coctel-carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 100%;
+    justify-items: center; /* Centra las tarjetas dentro de su celda */
+}
+
+/* =========================================
+   CARTAS (Papel Viejo con Texturas y Borde Dorado)
+   ========================================= */
+.coctel-card-scene {
+    width: 100%;
+    max-width: 350px;
+    height: 520px;
+    perspective: 1000px;
+}
+
+.coctel-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.coctel-card-scene.girada .coctel-card-inner {
+    transform: rotateY(180deg);
+}
+
+.coctel-card-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+
+    /* CAMBIO CLAVE: Textura de Papel Viejo (Recomendación técnica) */
+    /* Para esto, tenés que buscar una imagen que se llame 'old_paper_texture.jpg' */
+    /* y guardarla en la carpeta img/cite: Img Content]. */
+    background-image: url('/img/IL\ TEGGIANESE\ \(14\).png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* CAPA DE VELO: Para asegurar legibilidad si la textura es muy fuerte */
+    box-shadow: inset 0 0 0 1000px rgba(253, 250, 245, 0.7); 
+    
+    /* BORDE DORADO: Color de acento de tu marca */
+    border: 3px solid var(--color-acento); /* Un poco más grueso para que se note */
+    
+    /* Efecto de borde quemado sutil */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08), 
+                inset 0 0 20px rgba(139, 69, 19, 0.1); 
+}
+
+.coctel-card-front { align-items: center; }
+
+.coctel-img-placeholder {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-coctel-3d { max-height: 100%; max-width: 100%; object-fit: contain; }
+
+.coctel-card-front h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+}
+
+.coctel-short-desc { font-size: 0.9rem; color: #252525; line-height: 1.4; margin-bottom: auto; }
+
+.coctel-card-back { transform: rotateY(180deg); text-align: left; justify-content: space-between; }
+
+.seccion-receta h3 { font-family: var(--fuente-titulos); font-size: 1.1rem; color: #745c1b; margin-bottom: 0.4rem; }
+.seccion-receta ul, .seccion-receta p { font-size: 0.85rem; line-height: 1.4; color: #141414; }
+.seccion-receta ul { list-style-position: inside; }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+/* =========================================
+   FOOTER (Glass Effect)
+   ========================================= */
+.footer-teggianese-light {
+    padding: 5rem 1rem 1rem;
+    margin-top: 5rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.footer-columna h2 { font-family: var(--fuente-marca); color: var(--color-acento); font-size: 2rem; }
+.footer-columna h3 { font-size: 1.1rem; letter-spacing: 2px; color: var(--color-acento); margin-bottom: 1.2rem; }
+.footer-columna ul { list-style: none; }
+.footer-columna ul li { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.6rem; font-size: 0.95rem; }
+.footer-bottom { text-align: center; margin-top: 4rem; font-size: 0.8rem; color: #777; }
+
+/* =========================================
+   RESPONSIVE (3 COLUMNAS CELULAR)
+   ========================================= */
+@media (max-width: 768px) {
+    .logo-nav { width: 60px; }
+    .brand-info h1 { font-size: 1.1rem; }
+    .tagline { font-size: 0.7rem; }
+
+    #cocteles h2 { font-size: 1.5rem; }
+    .cocteles-intro { font-size: 0.85rem; margin-bottom: 2rem; padding: 0 1rem; }
+
+    .coctel-carousel {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.4rem;
+        padding: 0 0.1rem;
+    }
+
+    .coctel-card-scene { height: 380px; }
+    .coctel-card-face { padding: 0.8rem 0.35rem; }
+    .coctel-img-placeholder { height: 110px; margin-bottom: 0.5rem; }
+    .coctel-card-front h3 { font-size: 0.7rem; }
+    .coctel-short-desc { font-size: 0.52rem; line-height: 1.1; }
+    .seccion-receta h3 { font-size: 0.65rem; }
+    .seccion-receta ul, .seccion-receta p { font-size: 0.48rem; line-height: 1.2; }
+    
+    .footer-container { flex-direction: column; text-align: center; }
+}
