@@ -181,7 +181,7 @@ body::before {
    CAMBIO AQUÍ: Imagen más grande dentro de la carta
    ========================================= */
 .coctel-img-placeholder {
-    width: 110%;
+    width: 100%;
     /* Agrandé el alto de 200px a 300px */
     height: 250px; 
     margin-bottom: 1.7rem;
