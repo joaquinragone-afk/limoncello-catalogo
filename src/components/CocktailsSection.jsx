@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import DepthCarousel from './DepthCarousel/DepthCarousel.jsx'
 import RecipePanel from './RecipePanel/RecipePanel.jsx'
 import ShinyText from './ShinyText/ShinyText.jsx'
@@ -12,7 +12,20 @@ const items = cocteles.map((cocktail) => ({
 
 function CocktailsSection() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const activo = cocteles[activeIndex]
+
+  // El carrusel puede pasar por varios tragos en un solo gesto (swipe
+  // rápido, varios taps seguidos). Si el panel de recetas animara su
+  // aparición en cada paso intermedio, nunca llegaría a terminar y
+  // quedaría "fantasma" (semitransparente) todo el tiempo que dura el
+  // gesto. Por eso el panel usa un índice recién cuando el carrusel se
+  // queda quieto un instante, no en cada cambio.
+  const [displayedIndex, setDisplayedIndex] = useState(0)
+  useEffect(() => {
+    const id = setTimeout(() => setDisplayedIndex(activeIndex), 180)
+    return () => clearTimeout(id)
+  }, [activeIndex])
+
+  const activo = cocteles[displayedIndex]
 
   return (
     <section id="cocteles">

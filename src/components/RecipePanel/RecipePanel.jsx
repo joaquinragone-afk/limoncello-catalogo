@@ -23,13 +23,15 @@ function RecipePanel({ cocktail }) {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
       >
-        <BlurText
-          text={cocktail.nombre}
-          delay={30}
-          animateBy="words"
-          direction="top"
-          className="coctel-nombre-animado"
-        />
+        <h3>
+          <BlurText
+            text={cocktail.nombre}
+            delay={30}
+            animateBy="words"
+            direction="top"
+            className="coctel-nombre-animado"
+          />
+        </h3>
 
         <motion.p
           className="coctel-short-desc"
@@ -41,7 +43,7 @@ function RecipePanel({ cocktail }) {
         </motion.p>
 
         <div className="seccion-receta">
-          <h3>Ingredientes</h3>
+          <h4>Ingredientes</h4>
           <motion.ul variants={listVariants} initial="hidden" animate="show">
             {cocktail.ingredientes.map((ingrediente) => (
               <motion.li key={ingrediente} variants={itemVariants}>
@@ -52,7 +54,7 @@ function RecipePanel({ cocktail }) {
         </div>
 
         <div className="seccion-receta">
-          <h3>Preparación</h3>
+          <h4>Preparación</h4>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}

@@ -167,12 +167,13 @@ body::before {
 .coctel-nombre-animado {
     font-family: var(--fuente-titulos);
     font-size: 1.6rem;
+    font-weight: 400;
     margin-bottom: 0.6rem;
 }
 
 .coctel-short-desc { font-size: 0.9rem; color: #252525; line-height: 1.4; margin-bottom: 1.5rem; }
 
-.seccion-receta h3 { font-family: var(--fuente-titulos); font-size: 1.1rem; color: #745c1b; margin-bottom: 0.4rem; }
+.seccion-receta h4 { font-family: var(--fuente-titulos); font-size: 1.1rem; color: #745c1b; margin-bottom: 0.4rem; }
 .seccion-receta ul, .seccion-receta p { font-size: 0.85rem; line-height: 1.4; color: #141414; }
 .seccion-receta ul { list-style-position: inside; margin-bottom: 1.2rem; }
 
@@ -235,7 +236,7 @@ body::before {
         font-size: 0.8rem;
     }
 
-    .seccion-receta h3 { font-size: 0.9rem; }
+    .seccion-receta h4 { font-size: 0.9rem; }
     .seccion-receta ul, .seccion-receta p { font-size: 0.75rem; line-height: 1.3; }
 }
 
