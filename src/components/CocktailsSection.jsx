@@ -56,7 +56,7 @@ function CocktailsSection() {
               spread={80}
               tilt={20}
               visibleCards={4}
-              falloff={0.2}
+              falloff={0.13}
               blur={5}
               loop
               duration={650}
