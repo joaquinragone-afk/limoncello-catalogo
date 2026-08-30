@@ -6,6 +6,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* Las tarjetas que quedan atrás sobresalen del contenedor a propósito
+     (efecto de profundidad), pero si no se recortan acá, en mobile el
+     navegador las cuenta como contenido más ancho que la pantalla y
+     termina alejando/acercando (zoom) toda la página para que entren,
+     algo que cambia en cada frame mientras el carrusel se mueve. */
+  overflow: hidden;
   perspective: var(--dc-perspective, 1400px);
   perspective-origin: 50% 50%;
   touch-action: pan-y;
