@@ -33,4 +33,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: hostinger-deploy
-          force_orphan: true
+          # Sin force_orphan: historial normal, para que el "pull" que hace
+          # Hostinger pueda hacer fast-forward. Con force_orphan cada deploy
+          # reescribía la rama entera, y un git pull normal no puede
+          # fast-forwardear contra una rama sin ancestro en común.
