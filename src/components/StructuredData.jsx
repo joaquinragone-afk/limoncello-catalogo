@@ -17,7 +17,7 @@ const structuredData = {
       '@type': 'Organization',
       '@id': `${SITE_URL}/#organizacion`,
       name: 'Il Teggianese',
-      description: 'Limoncello artesanal elaborado en Paraná, Entre Ríos, Argentina.',
+      description: 'Limoncello elaborado en Paraná, Entre Ríos, Argentina.',
       url: SITE_URL,
       logo: toAbsoluteUrl('/img/logoTEGGIANESE (1).png'),
       image: toAbsoluteUrl('/img/fondo.jpg'),
