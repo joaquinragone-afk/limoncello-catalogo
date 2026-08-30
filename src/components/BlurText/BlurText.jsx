@@ -30,17 +30,22 @@ const BlurText = ({
   const ref = useRef(null);
 
   useEffect(() => {
-    if (!ref.current) return;
+    // Capturamos el nodo acá, no dentro del callback: si este componente
+    // se remonta rápido (varios cambios de trago seguidos), ref.current
+    // puede ser null para cuando el observer dispara, y unobserve(null)
+    // tira una excepción sin capturar.
+    const node = ref.current;
+    if (!node) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-          observer.unobserve(ref.current);
+          observer.unobserve(node);
         }
       },
       { threshold, rootMargin }
     );
-    observer.observe(ref.current);
+    observer.observe(node);
     return () => observer.disconnect();
   }, [threshold, rootMargin]);
 
