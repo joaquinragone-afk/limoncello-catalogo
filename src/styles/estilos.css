@@ -104,16 +104,23 @@ body::before {
     align-items: center;
 }
 
-#cocteles h2 {
-    color: #FFFFFF; /* Blanco puro */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+.cocteles-titulo {
+    font-family: var(--fuente-titulos);
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.55); /* Sombra para dar profundidad */
 }
 
 .cocteles-intro {
     color: #FFFFFF;
     font-weight: 400;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    max-width: 700px;
+    margin: 0 auto;
 }
+
+.cocteles-intro span { display: inline-block; }
 
 /* =========================================
    SHOWCASE DE TRAGOS (Carrusel 3D + Detalle)
@@ -203,7 +210,7 @@ body::before {
     .brand-info h1 { font-size: 1.1rem; }
     .tagline { font-size: 0.7rem; }
 
-    #cocteles h2 { font-size: 1.5rem; }
+    .cocteles-titulo { font-size: 1.9rem; }
     .cocteles-intro { font-size: 0.85rem; margin-bottom: 2rem; padding: 0 1rem; }
 
     .coctel-showcase {

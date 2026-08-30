@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import DepthCarousel from './DepthCarousel/DepthCarousel.jsx'
 import RecipePanel from './RecipePanel/RecipePanel.jsx'
+import ShinyText from './ShinyText/ShinyText.jsx'
+import FadeInWords from './FadeInWords/FadeInWords.jsx'
 import cocteles from '../data/cocteles.jsx'
 
 const items = cocteles.map((cocktail) => ({
@@ -15,11 +17,19 @@ function CocktailsSection() {
   return (
     <section id="cocteles">
       <div className="cocteles-container">
-        <h2>Disfrutalo en Cócteles</h2>
-        <p className="cocteles-intro">
-          El auténtico sabor de Italia es versátil. Deslizá el carrusel para descubrir la
-          receta de estos tragos refrescantes.
-        </p>
+        <h2 className="cocteles-titulo">
+          <ShinyText
+            text="Disfrutalo en Cócteles"
+            speed={3}
+            color="rgba(255, 255, 255, 0.75)"
+            shineColor="#fff3d1"
+            spread={80}
+          />
+        </h2>
+        <FadeInWords
+          className="cocteles-intro"
+          text="El auténtico sabor de Italia es versátil. Deslizá el carrusel para descubrir la receta de estos tragos refrescantes."
+        />
 
         <div className="coctel-showcase">
           <div className="coctel-showcase-carousel">
