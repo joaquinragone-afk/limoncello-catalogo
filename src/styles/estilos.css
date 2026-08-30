@@ -13,7 +13,14 @@
     box-sizing: border-box;
 }
 
-html, body {
+html {
+    width: 100%;
+}
+
+/* overflow-x solo va en un elemento (no en html y body a la vez): si
+   ambos quedan como contenedor de scroll, position: sticky dentro de
+   body deja de funcionar. */
+body {
     overflow-x: hidden;
     width: 100%;
 }
