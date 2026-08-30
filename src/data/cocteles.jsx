@@ -4,8 +4,8 @@ const cocteles = [
     imagen: '/img/chiara2 (1).png',
     descripcionCorta: 'Suave, luminoso y delicadamente cítrico.',
     ingredientes: [
-      '1 parte Il Teggianese',
-      '2 partes jugo de naranja natural',
+      '30 ml de Il Teggianese',
+      '60 ml de jugo de naranja natural',
       'Completar con soda',
       'Hielo, naranja y menta',
     ],
@@ -17,8 +17,8 @@ const cocteles = [
     imagen: '/img/tonic2 (1).png',
     descripcionCorta: 'Refrescante y equilibrado. Burbujeante, cítrico y ligero.',
     ingredientes: [
-      '2 partes Il Teggianese',
-      '3 partes Agua Tónica Premium',
+      '60 ml de Il Teggianese',
+      '90 ml de Agua Tónica Premium',
       'Hielo en cubos grandes',
       'Limón y menta para decorar',
     ],
@@ -30,8 +30,8 @@ const cocteles = [
     imagen: '/img/amalfi (1).png',
     descripcionCorta: 'Elegancia Italiana, seco, cítrico y equilibrado.',
     ingredientes: [
-      '1 parte Il Teggianese',
-      '2 partes Vodka de buena calidad',
+      '30 ml de Il Teggianese',
+      '60 ml de Vodka de buena calidad',
       'Twist de limón o cáscara',
       'Hielo',
     ],
@@ -43,8 +43,8 @@ const cocteles = [
     imagen: '/img/limonSpritz (1).png',
     descripcionCorta: 'Vibrante y delicado, burbuja fina y notas cítricas.',
     ingredientes: [
-      '2 partes Il Teggianese',
-      '3 partes espumante Brut',
+      '60 ml de Il Teggianese',
+      '90 ml de espumante Brut',
       'Un toque de soda',
       'Rodaja de limón o naranja',
     ],
@@ -56,7 +56,7 @@ const cocteles = [
     imagen: '/img/limonVerdiMenta (1).png',
     descripcionCorta: 'Dulce y fresco, menta intensa con un final vibrante.',
     ingredientes: [
-      '1 parte Il Teggianese',
+      '30 ml de Il Teggianese',
       'Jugo de 1/2 limón',
       '2 cditas de azúcar',
       'Menta, soda y hielo',
@@ -70,10 +70,10 @@ const cocteles = [
     descripcionCorta:
       'Inspirado en el color del río Paraná al atardecer y productos del litoral.',
     ingredientes: [
-      '2 partes de Il Teggianese',
-      '½ parte de miel líquida',
-      '1 parte de jugo de limón',
-      '2/3 partes de soda o agua con gas',
+      '60 ml de Il Teggianese',
+      '15 ml de miel líquida',
+      '30 ml de jugo de limón',
+      '20 ml de soda o agua con gas',
       'Limón, tomillo/menta y hielo',
     ],
     preparacion:
@@ -86,9 +86,9 @@ const cocteles = [
     descripcionCorta:
       'Aperitivo vibrante que une el carácter del limoncello con la frescura del arándano.',
     ingredientes: [
-      '2 partes de Il Teggianese',
-      '3 partes de espumante brut',
-      '1 parte de soda',
+      '60 ml de Il Teggianese',
+      '90 ml de espumante brut',
+      '30 ml de soda',
       '5/6 arándanos frescos',
       '1 rodaja de limón y hielo',
     ],
