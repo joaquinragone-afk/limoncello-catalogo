@@ -149,7 +149,7 @@ body::before {
     padding: 2rem 1.6rem;
 
     /* Misma textura de papel viejo que usaban las tarjetas */
-    background-image: url('/img/IL\ TEGGIANESE\ \(15\).png');
+    background-image: url('/img/papel-viejo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
