@@ -194,10 +194,13 @@ const DepthCarousel = ({
     const onWheel = e => {
       const cfg = cfgRef.current;
       if (cfg.count < 2) return;
+      // Solo capturamos gestos claramente horizontales (trackpad, shift+rueda).
+      // Un scroll vertical normal tiene que poder seguir bajando la página
+      // aunque el cursor pase por arriba del carrusel.
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
       e.preventDefault();
       tweenRef.current?.kill();
-      const raw = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-      const delta = e.deltaMode === 1 ? raw * 24 : raw;
+      const delta = e.deltaMode === 1 ? e.deltaX * 24 : e.deltaX;
       const step = clamp(delta / (cfg.cardWidth * 0.9), -0.6, 0.6);
       posRef.current += step;
       layout(posRef.current);
