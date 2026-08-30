@@ -32,7 +32,7 @@ body::before {
     top: 0; left: 0;
     width: 100%; height: 100%;
     z-index: -1;
-    background-image: url('img/fondo.jpg');
+    background-image: url('/img/fondo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -159,7 +159,7 @@ body::before {
     /* CAMBIO CLAVE: Textura de Papel Viejo (Recomendación técnica) */
     /* Para esto, tenés que buscar una imagen que se llame 'old_paper_texture.jpg' */
     /* y guardarla en la carpeta img/. */
-    background-image: url('img/IL\ TEGGIANESE\ \(15\).png');
+    background-image: url('/img/IL\ TEGGIANESE\ \(15\).png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
