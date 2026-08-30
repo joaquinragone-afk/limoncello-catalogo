@@ -153,7 +153,7 @@ body::before {
     border: 3px solid var(--color-acento);
 }
 
-.coctel-showcase-detalle h3 {
+.coctel-nombre-animado {
     font-family: var(--fuente-titulos);
     font-size: 1.6rem;
     margin-bottom: 0.6rem;
@@ -218,7 +218,7 @@ body::before {
         padding: 1.2rem 1rem;
     }
 
-    .coctel-showcase-detalle h3 {
+    .coctel-nombre-animado {
         font-size: 1.2rem;
     }
 

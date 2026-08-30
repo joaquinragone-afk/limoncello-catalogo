@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import DepthCarousel from './DepthCarousel/DepthCarousel.jsx'
+import RecipePanel from './RecipePanel/RecipePanel.jsx'
 import cocteles from '../data/cocteles.jsx'
 
 const items = cocteles.map((cocktail) => ({
@@ -41,22 +42,7 @@ function CocktailsSection() {
           </div>
 
           <div className="coctel-showcase-detalle">
-            <h3>{activo.nombre}</h3>
-            <p className="coctel-short-desc">{activo.descripcionCorta}</p>
-
-            <div className="seccion-receta">
-              <h3>Ingredientes</h3>
-              <ul>
-                {activo.ingredientes.map((ingrediente) => (
-                  <li key={ingrediente}>{ingrediente}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="seccion-receta">
-              <h3>Preparación</h3>
-              <p>{activo.preparacion}</p>
-            </div>
+            <RecipePanel cocktail={activo} />
           </div>
         </div>
       </div>
