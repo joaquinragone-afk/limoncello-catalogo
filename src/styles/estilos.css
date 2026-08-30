@@ -212,14 +212,12 @@ body::before {
 /* =========================================
    RESPONSIVE (3 COLUMNAS OPTIMIZADO)
    ========================================= */
-@media (max-width: 768px) {
-    .logo-nav { width: 60px; }
-    .brand-info h1 { font-size: 1.1rem; }
-    .tagline { font-size: 0.7rem; }
-
-    .cocteles-titulo { font-size: 1.9rem; }
-    .cocteles-intro { font-size: 0.85rem; margin-bottom: 2rem; padding: 0 1rem; }
-
+/* El carrusel + panel de detalle pasan a apilarse (flex-wrap) antes de
+   los 768px del resto del layout mobile (aprox. entre 850 y 900px,
+   según el ancho disponible), así que esta franja usa su propio
+   breakpoint más ancho para no quedar con el tamaño de escritorio
+   apilado (carrusel innecesariamente alto). */
+@media (max-width: 880px) {
     .coctel-showcase {
         gap: 1.5rem;
     }
@@ -242,6 +240,24 @@ body::before {
 
     .seccion-receta h3 { font-size: 0.9rem; }
     .seccion-receta ul, .seccion-receta p { font-size: 0.75rem; line-height: 1.3; }
+}
+
+@media (max-width: 768px) {
+    .logo-nav { width: 60px; }
+    .brand-info h1 { font-size: 1.1rem; }
+    .tagline { font-size: 0.7rem; }
+
+    .cocteles-titulo { font-size: 1.9rem; }
+    .cocteles-intro { font-size: 0.85rem; margin-bottom: 2rem; padding: 0 1rem; }
 
     .footer-container { flex-direction: column; text-align: center; }
+}
+
+/* Celulares angostos: "IL TEGGIANESE" con letter-spacing se corta en
+   dos líneas y se sale del header a 1.1rem. */
+@media (max-width: 400px) {
+    .nav-content { gap: 0.8rem; }
+    .logo-nav { width: 48px; }
+    .brand-info h1 { font-size: 0.85rem; letter-spacing: 1px; }
+    .tagline { font-size: 0.65rem; }
 }
