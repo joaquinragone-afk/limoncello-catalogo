@@ -99,6 +99,8 @@ const cocteles = [
         limoncello, espumante y un toque de soda. Mezclar suavemente y decorar.
       </>
     ),
+    preparacionTexto:
+      'Llenar la copa con hielo y 3-4 arándanos (aplastá uno para darle un color rosado-violeta). Verter limoncello, espumante y un toque de soda. Mezclar suavemente y decorar.',
   },
   {
     nombre: 'Fragola Limoncello Spritz',
