@@ -51,10 +51,7 @@ body::before {
    NAVBAR TRANSLÚCIDA
    ========================================= */
 .navbar-teggianese {
-    position: sticky;
-    top: 0;
     width: 100%;
-    z-index: 1000;
     background: rgba(249, 248, 246, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
