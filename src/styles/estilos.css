@@ -13,7 +13,14 @@
     box-sizing: border-box;
 }
 
-html, body {
+html {
+    width: 100%;
+}
+
+/* overflow-x solo va en un elemento (no en html y body a la vez): si
+   ambos quedan como contenedor de scroll, position: sticky dentro de
+   body deja de funcionar. */
+body {
     overflow-x: hidden;
     width: 100%;
 }
@@ -44,10 +51,7 @@ body::before {
    NAVBAR TRANSLÚCIDA
    ========================================= */
 .navbar-teggianese {
-    position: sticky;
-    top: 0;
     width: 100%;
-    z-index: 1000;
     background: rgba(249, 248, 246, 0.7);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -104,108 +108,73 @@ body::before {
     align-items: center;
 }
 
-#cocteles h2 {
-    color: #FFFFFF; /* Blanco puro */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+.cocteles-titulo {
+    font-family: var(--fuente-titulos);
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.55); /* Sombra para dar profundidad */
 }
 
 .cocteles-intro {
     color: #FFFFFF;
     font-weight: 400;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+    max-width: 700px;
+    margin: 0 auto;
 }
 
-/* Grilla Centrada */
-.coctel-carousel {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    width: 100%;
-    justify-items: center; /* Centra las tarjetas dentro de su celda */
-}
+.cocteles-intro span { display: inline-block; }
 
 /* =========================================
-   CARTAS (Papel Viejo con Texturas y Borde Dorado)
+   SHOWCASE DE TRAGOS (Carrusel 3D + Detalle)
    ========================================= */
-.coctel-card-scene {
-    width: 100%;
-    max-width: 350px;
-    height: 520px;
-    perspective: 1000px;
-}
-
-.coctel-card-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transform-style: preserve-3d;
-}
-
-.coctel-card-scene.girada .coctel-card-inner {
-    transform: rotateY(180deg);
-}
-
-.coctel-card-face {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    border-radius: 12px;
-    padding: 2rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-
-    /* CAMBIO CLAVE: Textura de Papel Viejo (Recomendación técnica) */
-    /* Para esto, tenés que buscar una imagen que se llame 'old_paper_texture.jpg' */
-    /* y guardarla en la carpeta img/. */
-    background-image: url('/img/IL\ TEGGIANESE\ \(15\).png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* CAPA DE VELO: Para asegurar legibilidad si la textura es muy fuerte */
-    box-shadow: inset 0 0 0 1000px rgba(253, 250, 245, 0.7); 
-    
-    /* BORDE DORADO: Color de acento de tu marca */
-    border: 3px solid var(--color-acento); /* Un poco más grueso para que se note */
-    
-    /* Efecto de borde quemado sutil */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08), 
-                inset 0 0 20px rgba(139, 69, 19, 0.1); 
-}
-
-.coctel-card-front { align-items: center; }
-
-/* =========================================
-   CAMBIO AQUÍ: Imagen más grande dentro de la carta
-   ========================================= */
-.coctel-img-placeholder {
-    width: 100%;
-    /* Agrandé el alto de 200px a 300px */
-    height: 250px; 
-    margin-bottom: 1.7rem;
+.coctel-showcase {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
-/* No cambié nada acá, pero 'object-fit: contain' se adapta al nuevo tamaño */
-.img-coctel-3d { max-height: 250%; max-width: 110%; object-fit: contain; }
+.coctel-showcase-carousel {
+    position: relative;
+    width: min(100%, 480px);
+    height: 480px;
+    flex-shrink: 0;
+}
 
-.coctel-card-front h3 {
+.coctel-showcase-detalle {
+    flex: 1 1 320px;
+    max-width: 420px;
+    text-align: left;
+    border-radius: 12px;
+    padding: 2rem 1.6rem;
+
+    /* Misma textura de papel viejo que usaban las tarjetas */
+    background-image: url('/img/papel-viejo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    box-shadow: inset 0 0 0 1000px rgba(253, 250, 245, 0.7),
+                0 10px 25px rgba(0,0,0,0.08),
+                inset 0 0 20px rgba(139, 69, 19, 0.1);
+    border: 3px solid var(--color-acento);
+}
+
+.coctel-nombre-animado {
     font-family: var(--fuente-titulos);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 0.6rem;
 }
 
-.coctel-short-desc { font-size: 0.9rem; color: #252525; line-height: 1.4; margin-bottom: auto; }
-
-.coctel-card-back { transform: rotateY(180deg); text-align: left; justify-content: space-between; }
+.coctel-short-desc { font-size: 0.9rem; color: #252525; line-height: 1.4; margin-bottom: 1.5rem; }
 
 .seccion-receta h3 { font-family: var(--fuente-titulos); font-size: 1.1rem; color: #745c1b; margin-bottom: 0.4rem; }
 .seccion-receta ul, .seccion-receta p { font-size: 0.85rem; line-height: 1.4; color: #141414; }
-.seccion-receta ul { list-style-position: inside; }
+.seccion-receta ul { list-style-position: inside; margin-bottom: 1.2rem; }
 
 /* =========================================
    FOOTER
@@ -240,56 +209,52 @@ body::before {
 /* =========================================
    RESPONSIVE (3 COLUMNAS OPTIMIZADO)
    ========================================= */
+/* El carrusel + panel de detalle pasan a apilarse (flex-wrap) antes de
+   los 768px del resto del layout mobile (aprox. entre 850 y 900px,
+   según el ancho disponible), así que esta franja usa su propio
+   breakpoint más ancho para no quedar con el tamaño de escritorio
+   apilado (carrusel innecesariamente alto). */
+@media (max-width: 880px) {
+    .coctel-showcase {
+        gap: 1.5rem;
+    }
+
+    .coctel-showcase-carousel {
+        height: 340px;
+    }
+
+    .coctel-showcase-detalle {
+        padding: 1.2rem 1rem;
+    }
+
+    .coctel-nombre-animado {
+        font-size: 1.2rem;
+    }
+
+    .coctel-short-desc {
+        font-size: 0.8rem;
+    }
+
+    .seccion-receta h3 { font-size: 0.9rem; }
+    .seccion-receta ul, .seccion-receta p { font-size: 0.75rem; line-height: 1.3; }
+}
+
 @media (max-width: 768px) {
     .logo-nav { width: 60px; }
     .brand-info h1 { font-size: 1.1rem; }
     .tagline { font-size: 0.7rem; }
 
-    #cocteles h2 { font-size: 1.5rem; }
+    .cocteles-titulo { font-size: 1.9rem; }
     .cocteles-intro { font-size: 0.85rem; margin-bottom: 2rem; padding: 0 1rem; }
 
-    .coctel-carousel {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem; /* Un pelín más de aire entre cartas */
-        padding: 0 0.2rem;
-    }
-
-    /* Ajustamos el alto para que entre la imagen grande sin sobrar papel */
-    .coctel-card-scene { height: 360px; } 
-    
-    .coctel-card-face { 
-        padding: 0.8rem 0.4rem; 
-    }
-
-    /* AGRANDAMOS LA IMAGEN: Le damos prioridad absoluta */
-    .coctel-img-placeholder { 
-        height: 180px; 
-        margin-bottom: 0.3rem; 
-    }
-
-    /* REDUCIMOS EL TEXTO: Para que la imagen respire */
-    .coctel-card-front h3 { 
-        font-size: 0.85rem; /* Título del trago más chico */
-        margin-bottom: 0.2rem;
-    }
-
-    .coctel-short-desc { 
-        font-size: 0.55rem; /* Descripción pequeña */
-        line-height: 1.2;
-    }
-
-    /* EL TEXTO QUE TE MOLESTABA: "Toca para ver ingredientes" */
-    /* Targeteamos específicamente el último párrafo de la cara frontal */
-    .coctel-card-front p:last-of-type {
-        font-size: 0.45rem; /* Muy pequeño pero legible */
-        font-weight: bold;
-        color: var(--color-acento);
-        margin-top: 0.3rem;
-        text-transform: uppercase;
-    }
-
-    .seccion-receta h3 { font-size: 0.65rem; }
-    .seccion-receta ul, .seccion-receta p { font-size: 0.5rem; line-height: 1.2; }
-    
     .footer-container { flex-direction: column; text-align: center; }
+}
+
+/* Celulares angostos: "IL TEGGIANESE" con letter-spacing se corta en
+   dos líneas y se sale del header a 1.1rem. */
+@media (max-width: 400px) {
+    .nav-content { gap: 0.8rem; }
+    .logo-nav { width: 48px; }
+    .brand-info h1 { font-size: 0.85rem; letter-spacing: 1px; }
+    .tagline { font-size: 0.65rem; }
 }
