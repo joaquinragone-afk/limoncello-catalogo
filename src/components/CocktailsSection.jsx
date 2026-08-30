@@ -21,8 +21,8 @@ function CocktailsSection() {
           <ShinyText
             text="Disfrutalo en Cócteles"
             speed={3}
-            color="rgba(255, 255, 255, 0.75)"
-            shineColor="#fff3d1"
+            color="#ffffff"
+            shineColor="#ffe9a8"
             spread={80}
           />
         </h2>
