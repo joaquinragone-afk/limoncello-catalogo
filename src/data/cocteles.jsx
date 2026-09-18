@@ -121,7 +121,7 @@ const cocteles = [
     nombre: 'Limoncello Ginger',
     imagen: '/img/7.png',
     descripcionCorta:
-      'Fresco, cítrico y ligeramente espaciado. Ideal para acompañar con el sushi.',
+      'Fresco, cítrico y ligeramente especiado. Ideal para acompañar con el sushi.',
     ingredientes: [
       '50 ml de Limoncello Il Teggianese',
       '80 ml de Ginger Ale',
